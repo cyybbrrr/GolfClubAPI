@@ -1,0 +1,121 @@
+{
+    "info": {
+      "name": "GolfClubAPI",
+      "_postman_id": "f27a7d8f-fbac-4a88-b1b3-08265ac1d67d",
+      "description": "Collection to test GolfClub Spring Boot REST API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Add Member",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"Scarlett\",\n  \"address\": \"123 Main St\",\n  \"email\": \"scar@example.com\",\n  \"phoneNumber\": \"555-5555\",\n  \"membershipStartDate\": \"2025-08-01\",\n  \"membershipDuration\": 12\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/members",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["members"]
+          }
+        }
+      },
+      {
+        "name": "Add Tournament",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"startDate\": \"2025-09-01\",\n  \"endDate\": \"2025-09-05\",\n  \"location\": \"Newfoundland\",\n  \"entryFee\": 50.0,\n  \"cashPrizeAmount\": 5000.0\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/tournaments",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["tournaments"]
+          }
+        }
+      },
+      {
+        "name": "Add Member to Tournament",
+        "request": {
+          "method": "POST",
+          "url": {
+            "raw": "http://localhost:8080/members/1/tournaments/1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["members", "1", "tournaments", "1"]
+          }
+        }
+      },
+      {
+        "name": "Get All Members in Tournament",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:8080/tournaments/1/members",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["tournaments", "1", "members"]
+          }
+        }
+      },
+      {
+        "name": "Search Members by Name",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:8080/members/search?name=Scarlett",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["members", "search"],
+            "query": [
+              {
+                "key": "name",
+                "value": "Scarlett"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Search Tournaments by Location",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:8080/tournaments/search?location=Newfoundland",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["tournaments", "search"],
+            "query": [
+              {
+                "key": "location",
+                "value": "Newfoundland"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+  
