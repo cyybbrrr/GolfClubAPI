@@ -1,0 +1,29 @@
+
+# Compiled class files
+target/
+*.class
+
+# Maven specific
+.mvn/
+!**/maven-wrapper.properties
+mvnw
+mvnw.cmd
+
+# Logs
+*.log
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Build output
+out/
+
+# Environment files
+.env
+application-local.properties
